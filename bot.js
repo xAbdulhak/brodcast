@@ -22,7 +22,7 @@ client.on("message", message => {
 });
 
 
-const developers = ["419211312359276544","663432977581342750"]
+const developers = ["648139155355992074","663432977581342750"]
 
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
