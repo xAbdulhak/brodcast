@@ -9,9 +9,22 @@ const client3 = new Discord.Client();
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`Testing `) 
+  return channel.send(`https://discord.gg/JzAS6fa`) 
 }).catch(console.error)
 })
+
+client2.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`https://discord.gg/JzAS6fa`) 
+}).catch(console.error)
+})
+
+client3.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`https://discord.gg/JzAS6fa`) 
+}).catch(console.error)
+})
+
 
 
 
