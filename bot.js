@@ -60,7 +60,7 @@ client.user.setAvatar(argresult);
 
 client2.on("message", message => {
 
-            if (message.content.startsWith("2bc")) {
+            if (message.content.startsWith("1bc")) {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
@@ -110,7 +110,7 @@ client2.user.setAvatar(argresult);
 
 client3.on("message", message => {
 
-            if (message.content.startsWith("3bc")) {
+            if (message.content.startsWith("1bc")) {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
