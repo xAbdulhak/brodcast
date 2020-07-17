@@ -6,26 +6,19 @@ const client3 = new Discord.Client();
 
 //1
 
+client.on("message", message => {
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`https://discord.gg/JzAS6fa`) 
-}).catch(console.error)
+            if (message.content.startsWith("1bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
 })
-
-client2.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`https://discord.gg/JzAS6fa`) 
-}).catch(console.error)
-})
-
-client3.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`https://discord.gg/JzAS6fa`) 
-}).catch(console.error)
-})
-
-
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` **تم ارسال رسالة الى ✅** `); 
+ message.delete(); 
+};     
+});
 
 
 const developers = ["648139155355992074","663432977581342750"]
