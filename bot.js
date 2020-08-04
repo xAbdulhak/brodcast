@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const client2 = new Discord.Client();
 const client3 = new Discord.Client();
 const client4 = new Discord.Client();
+const client5 = new Discord.Client();
 
 //1
 const developers = ["490546269832609792","663432977581342750"]
@@ -10,6 +11,7 @@ const prefix1 = "1"
 const prefix2 = "1"
 const prefix3 = "1"
 const prefix4 = "1"
+const prefix5 = "5"
 
 client.on("message", message => {
 
@@ -204,8 +206,56 @@ client4.user.setAvatar(argresult);
 }
 });
 
+client5.on("message", message => {
+
+            if (message.content.startsWith(`${prefix5}bc`)) {
+    if (!developers.includes(message.author.id)) return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` **تم ارسال رسالة الى ✅** `); 
+ message.delete(); 
+};     
+});
+
+client5.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!developers.includes(message.author.id)) return;
+    
+if (message.content.startsWith(`${prefix5}setg`)) {
+  client5.user.setGame(argresult);
+    message.channel.send(`**✅ done : ${argresult}**`)
+} else 
+   if (message.content === (`${prefix5}leave`)) {
+  message.guild.leave();        
+} else  
+if (message.content.startsWith(`${prefix5}setw`)) {
+client5.user.setActivity(argresult, {type:'WATCHING'});
+    message.channel.send(`**✅ done : ${argresult}**`)
+} else 
+if (message.content.startsWith(`${prefix5}setl`)) {
+client5.user.setActivity(argresult , {type:'LISTENING'});
+    message.channel.send(`**✅ done :  ${argresult}**`)
+} else 
+if (message.content.startsWith(`${prefix5}sets`)) {
+  client5.user.setGame(argresult, "https://www.twitch.tv/dream");
+    message.channel.send(`**✅ done : **`)
+}
+if (message.content.startsWith(`${prefix5}setname`)) {
+client5.user.setUsername(argresult).then
+    message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(`${prefix5}setava`)) {
+client5.user.setAvatar(argresult);
+  message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
+
 
 client.login(process.env.TOKEN);
 client2.login(process.env.TOKEN2);
 client3.login(process.env.TOKEN3);
 client4.login(process.env.TOKEN4);
+client5.login(process.env.TOKEN5);
