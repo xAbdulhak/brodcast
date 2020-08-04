@@ -5,7 +5,7 @@ const client3 = new Discord.Client();
 const client4 = new Discord.Client();
 
 //1
-const developers = ["490546269832609792","516292623053357087"]
+const developers = ["490546269832609792","663432977581342750"]
 const prefix1 = "1"
 const prefix2 = "1"
 const prefix3 = "1"
